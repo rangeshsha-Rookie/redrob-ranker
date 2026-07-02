@@ -11,7 +11,7 @@ team_members:
     role: "Solo"
 
 github_repo: "https://github.com/rangeshsha-Rookie/redrob-ranker"
-sandbox_link: "SANDBOX_DEMO_LINK_HERE"
+sandbox_link: "https://colab.research.google.com/drive/1l_xRxQj8hkYATMzuDAzCwyWkaNIJ4rRi?usp=sharing"
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 compute:

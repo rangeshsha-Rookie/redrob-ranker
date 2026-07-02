@@ -32,4 +32,4 @@ python rank.py --candidates ./candidates.jsonl --out ./submission.csv
 - `candidates.jsonl` stays local and is not committed to GitHub.
 
 ## Sandbox Demo
-Colab link: https://colab.research.google.com/drive/PUT_YOUR_NOTEBOOK_LINK_HERE
+Colab link: https://colab.research.google.com/drive/1l_xRxQj8hkYATMzuDAzCwyWkaNIJ4rRi?usp=sharing

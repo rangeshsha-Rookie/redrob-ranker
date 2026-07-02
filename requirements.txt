@@ -1,1 +1,5 @@
-# No external dependencies. rank.py uses only the Python standard library.
+# rank.py uses Python standard library only — no pip install needed
+# For XLSX export only (optional):
+# pip install pandas openpyxl
+pandas
+openpyxl

@@ -2,28 +2,35 @@ team_name: "Rangesh Gupta Solo"
 
 primary_contact:
   name: "Rangesh Gupta"
-  email: "PRIMARY_CONTACT_EMAIL_HERE"
-  phone: "PRIMARY_CONTACT_PHONE_HERE"
+  email: "rengnavdev@gmail.com"
+  github: "https://github.com/rangeshsha-Rookie"
 
 team_members:
   - name: "Rangesh Gupta"
-    email: "PRIMARY_CONTACT_EMAIL_HERE"
-    role: "Solo"
+    email: "rengnavdev@gmail.com"
+    role: "Solo — Data Engineering + Ranking Logic"
 
 github_repo: "https://github.com/rangeshsha-Rookie/redrob-ranker"
 sandbox_link: "https://colab.research.google.com/drive/1l_xRxQj8hkYATMzuDAzCwyWkaNIJ4rRi?usp=sharing"
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
+approach_summary: >
+  Deterministic multi-signal weighted scoring. Signals: skills match (TF-IDF token overlap),
+  years of experience, seniority level, Bangalore location bonus, notice period penalty,
+  and all 23 redrob behavioral signals. No ML model. CPU-only. Reproducible.
+
 compute:
-  platform: "COMPUTE_ENVIRONMENT_SUMMARY_HERE"
-  cpu_cores: 1
-  ram_gb: 0
+  platform: "Local Windows PC + Google Colab (sample)"
+  cpu_cores: 2
+  ram_gb: 8
   python_version: "3.11"
-  os: "Windows"
+  os: "Windows 11"
   uses_gpu_for_inference: false
   has_network_during_ranking: false
   pre_computation_required: false
   pre_computation_time_minutes: 0
+  estimated_ranking_time_minutes: 3
 
 ai_tools_used:
-  - "AI_TOOLS_DECLARED_HERE"
+  - "Perplexity AI (architecture planning and code review)"
+  - "GitHub Copilot (code suggestions)"

@@ -1,4 +1,29 @@
+# Large dataset files — keep local only
 candidates.jsonl
 candidates.jsonl.gz
+*.jsonl
+*.gz
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Output files (keep submission.csv committed, ignore local test outputs)
+test_output*.csv
+test_output*.xlsx

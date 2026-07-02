@@ -1,0 +1,29 @@
+team_name: "Rangesh Gupta Solo"
+
+primary_contact:
+  name: "Rangesh Gupta"
+  email: "PRIMARY_CONTACT_EMAIL_HERE"
+  phone: "PRIMARY_CONTACT_PHONE_HERE"
+
+team_members:
+  - name: "Rangesh Gupta"
+    email: "PRIMARY_CONTACT_EMAIL_HERE"
+    role: "Solo"
+
+github_repo: "https://github.com/rangeshsha-Rookie/redrob-ranker"
+sandbox_link: "SANDBOX_DEMO_LINK_HERE"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "COMPUTE_ENVIRONMENT_SUMMARY_HERE"
+  cpu_cores: 1
+  ram_gb: 0
+  python_version: "3.11"
+  os: "Windows"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "AI_TOOLS_DECLARED_HERE"

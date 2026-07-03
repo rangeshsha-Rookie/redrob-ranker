@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India Runs — Redrob AI Challenge Deck | Rangesh Gupta</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    .skip-link{position:absolute;left:-9999px;top:auto;z-index:999}
+    .skip-link:focus{left:16px;top:16px;background:#6fb5bf;color:#0a0a0a;padding:8px 16px;border-radius:8px;font-size:16px;font-weight:700}
+
+    :root{
+      --bg:#171614;
+      --surface:rgba(255,255,255,.04);
+      --border:rgba(255,255,255,.09);
+      --text:#f0ede8;
+      --muted:#b8b4ac;
+      --faint:#9a9690;
+      --primary:#6fb5bf;
+      --accent:#e8af34;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:Inter,system-ui,sans-serif;background:#0a0a0a;color:var(--text)}
+
+    .deck{padding:clamp(12px,3vw,32px);display:grid;gap:clamp(16px,3vw,32px)}
+
+    .slide-wrapper{
+      width:100%;max-width:1280px;margin:0 auto;
+      aspect-ratio:16/9;
+      container-type:inline-size;
+    }
+    .slide{
+      width:100%;height:100%;
+      background:linear-gradient(170deg,#1c1b19 0%,#111 100%);
+      border:1px solid var(--border);
+      border-radius:clamp(12px,2cqi,24px);
+      padding:clamp(28px,5cqi,60px) clamp(28px,5cqi,64px);
+      position:relative;overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+      display:flex;flex-direction:column;
+    }
+
+    .brand{font-size:clamp(11px,1.2cqi,15px);color:var(--primary);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:clamp(10px,1.5cqi,18px)}
+    h1{font-size:clamp(26px,5.5cqi,60px);line-height:1.04;font-weight:800;max-width:92%}
+    h2{font-size:clamp(20px,3.2cqi,36px);line-height:1.1;font-weight:800}
+    .subtitle{font-size:clamp(14px,1.9cqi,22px);color:var(--muted);line-height:1.55;max-width:92%;margin-top:clamp(6px,1cqi,14px)}
+    p{font-size:clamp(14px,1.9cqi,22px);line-height:1.55;color:var(--muted);max-width:98%}
+    li{font-size:clamp(13px,1.75cqi,22px);line-height:1.5;color:var(--text);margin:clamp(5px,.8cqi,11px) 0}
+    ul{padding-left:clamp(18px,2cqi,28px)}
+
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(14px,2cqi,34px);flex:1;align-items:end}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.8cqi,22px);margin-top:clamp(12px,2cqi,24px)}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.4cqi,18px);margin-top:clamp(14px,2cqi,28px)}
+
+    @container (max-width:700px){
+      .hero-grid,.grid-2,.timeline{grid-template-columns:1fr}
+    }
+
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:clamp(10px,1.5cqi,20px);padding:clamp(14px,2cqi,26px);display:flex;flex-direction:column;gap:clamp(6px,1cqi,12px)}
+    .card h2{font-size:clamp(16px,2.4cqi,28px)}
+    .stat{font-size:clamp(28px,4.5cqi,52px);font-weight:800;color:var(--accent);line-height:1}
+    .small{font-size:clamp(10px,1.1cqi,16px);color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
+
+    .pills{display:flex;flex-wrap:wrap;gap:clamp(4px,.8cqi,10px);margin-top:clamp(10px,1.5cqi,18px)}
+    .pill{display:inline-flex;align-items:center;padding:clamp(4px,.6cqi,8px) clamp(8px,1.2cqi,16px);border:1px solid var(--border);border-radius:999px;color:var(--text);font-size:clamp(10px,1.1cqi,16px);background:rgba(255,255,255,.03)}
+
+    .step{background:rgba(111,181,191,.08);border:1px solid rgba(111,181,191,.3);border-radius:clamp(10px,1.5cqi,18px);padding:clamp(10px,1.5cqi,20px)}
+    .step strong{display:block;font-size:clamp(11px,1.3cqi,18px);color:var(--primary);margin-bottom:clamp(4px,.7cqi,8px)}
+    .step span{font-size:clamp(11px,1.4cqi,19px);line-height:1.35;color:var(--text)}
+
+    .code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(11px,1.5cqi,20px);line-height:1.6;color:#e7e4dd;white-space:pre-wrap;background:rgba(255,255,255,.04);border:1px solid var(--border);padding:clamp(12px,1.8cqi,24px);border-radius:clamp(10px,1.5cqi,18px);margin-top:clamp(10px,1.5cqi,18px)}
+
+    .glow-tr{position:absolute;top:0;right:0;width:clamp(180px,35%,340px);height:clamp(180px,35%,340px);background:radial-gradient(circle at top right,rgba(111,181,191,.22),transparent 60%);pointer-events:none}
+    .glow-bl{position:absolute;bottom:0;left:0;width:clamp(120px,28%,260px);height:clamp(120px,28%,260px);background:radial-gradient(circle at bottom left,rgba(232,175,52,.1),transparent 60%);pointer-events:none}
+
+    .slide-footer{margin-top:auto;padding-top:clamp(8px,1.2cqi,18px);display:flex;justify-content:space-between;align-items:center;color:var(--faint);font-size:clamp(9px,1cqi,14px);border-top:1px solid var(--border)}
+    .footer-link{color:var(--primary);text-decoration:none}
+    .footer-link:hover{text-decoration:underline}
+
+    .img-placeholder{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03);border:1.5px dashed rgba(255,255,255,.14);border-radius:clamp(8px,1.2cqi,16px);color:var(--faint);font-size:clamp(10px,1.1cqi,14px);text-align:center;padding:clamp(8px,1.2cqi,16px)}
+
+    @media print{
+      body{background:#fff}
+      .slide-wrapper{page-break-after:always;max-width:100%;aspect-ratio:16/9}
+      .slide{box-shadow:none;border:none;border-radius:0}
+    }
+
+    :focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
+  </style>
+</head>
+<body>
+
+<a href="#slide-1" class="skip-link">Skip to main content</a>
+
+<main class="deck">
+
+  <!-- SLIDE 1 — TITLE -->
+  <div class="slide-wrapper" id="slide-1">
+    <article class="slide" aria-label="Slide 1 of 5 — Title">
+      <div class="glow-tr" aria-hidden="true"></div>
+      <div class="glow-bl" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div>
+          <div class="brand">India Runs × Redrob AI — Data &amp; AI Challenge 2026</div>
+          <h1>Intelligent Candidate Discovery &amp; Ranking</h1>
+          <p class="subtitle">A portfolio-grade submission for the official India Runs hackathon, Track 01 — Data &amp; AI, organised by Redrob AI and Hack2skill.</p>
+          <div class="pills">
+            <span class="pill">Track 01 — Data &amp; AI</span>
+            <span class="pill">₹50 Lakh+ Prize Pool</span>
+            <span class="pill">100,000 Candidates</span>
+            <span class="pill">CPU-only · No network</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img-placeholder" style="height:clamp(50px,10cqi,90px)" role="img" aria-label="Redrob and Hack2skill official logos — add manually from redrob.io and hack2skill.com">
+            Add official logo here<br><small>Download from redrob.io or hack2skill.com/event/india_runs</small>
+          </div>
+          <div><div class="small">Submitted by</div><div style="font-size:clamp(18px,2.8cqi,34px);font-weight:800">Rangesh Gupta</div></div>
+          <div><div class="small">Repository</div><a href="https://github.com/rangeshsha-Rookie/redrob-ranker" class="footer-link" target="_blank" rel="noopener noreferrer" style="font-size:clamp(10px,1.2cqi,15px)">github.com/rangeshsha-Rookie/redrob-ranker</a></div>
+          <div><div class="small">Sandbox</div><span style="font-size:clamp(10px,1.2cqi,15px);color:var(--muted)">Google Colab demo — linked in repo README</span></div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Official event: <a href="https://hack2skill.com/event/india_runs/" class="footer-link" target="_blank" rel="noopener noreferrer">hack2skill.com/event/india_runs</a></span>
+        <span aria-label="Slide 1 of 5">1 / 5</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- SLIDE 2 — CHALLENGE CONTEXT -->
+  <div class="slide-wrapper" id="slide-2">
+    <article class="slide" aria-label="Slide 2 of 5 — Challenge Context">
+      <div class="glow-tr" aria-hidden="true"></div>
+      <div class="brand">Challenge Context</div>
+      <h2>What the official India Runs event asked participants to build</h2>
+      <p class="subtitle">Track 1 — contextual relevance scoring, signal integration, and a sub-5-minute CPU-only shortlisting pipeline.</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="stat">100,000</div>
+          <p>Candidate profiles in the official challenge pool, each carrying 23 redrob behavioral signals, ranked against a real Redrob AI Engineer JD.</p>
+        </div>
+        <div class="card">
+          <div class="stat">Top 100</div>
+          <p>Required output: a ranked shortlist in the predefined submission CSV format, with a 1–2 sentence rationale per candidate explaining the ranking.</p>
+        </div>
+      </div>
+      <ul style="margin-top:clamp(12px,1.5cqi,20px)">
+        <li>Submission must include a <strong>public GitHub repo</strong>, a working <strong>sandbox link</strong>, and a <strong>ranked output file</strong>.</li>
+        <li>Evaluation runs through 5 stages — format check, ranking quality, signal integrity, trap detection, and architecture review.</li>
+      </ul>
+      <div class="slide-footer">
+        <span>Source: official submission_spec.md and India Runs event page</span>
+        <span aria-label="Slide 2 of 5">2 / 5</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- SLIDE 3 — MY SOLUTION -->
+  <div class="slide-wrapper" id="slide-3">
+    <article class="slide" aria-label="Slide 3 of 5 — My Solution">
+      <div class="glow-tr" aria-hidden="true"></div>
+      <div class="brand">My Solution</div>
+      <h2>Deterministic, CPU-only candidate ranking pipeline</h2>
+      <p class="subtitle">Rule-based scoring across 6 signal groups — fully transparent, reproducible, and explainable at any reviewer stage.</p>
+      <div class="grid-2" style="margin-top:clamp(10px,1.5cqi,18px)">
+        <ul>
+          <li>Skills match via token overlap with the JD</li>
+          <li>Years of experience extraction and scoring</li>
+          <li>Seniority-level alignment with the target role</li>
+        </ul>
+        <ul>
+          <li>Bangalore location bonus (JD preference)</li>
+          <li>Notice-period penalty for long lead times</li>
+          <li>All 23 redrob behavioral signals weighted</li>
+        </ul>
+      </div>
+      <div class="code" role="region" aria-label="Pipeline pseudocode">Step 1  Load candidates.jsonl (100,000 records — local only, not committed)
+Step 2  Extract 6 signal groups per candidate
+Step 3  Apply JD-priority weights → composite final_score  (0.0 – 1.0)
+Step 4  Sort descending, take top 100
+Step 5  Write submission.csv with rank, score, 1-2 sentence reasoning</div>
+      <div class="slide-footer">
+        <span>Constraints satisfied: CPU-only · no network during ranking · ≤ 5 min · ≤ 16 GB RAM</span>
+        <span aria-label="Slide 3 of 5">3 / 5</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- SLIDE 4 — OFFICIAL TIMELINE -->
+  <div class="slide-wrapper" id="slide-4">
+    <article class="slide" aria-label="Slide 4 of 5 — Official Event Timeline">
+      <div class="glow-tr" aria-hidden="true"></div>
+      <div class="brand">Official Event Timeline</div>
+      <h2>India Runs — Key dates from the official event page</h2>
+      <p class="subtitle">Open hackathon for builders, thinkers, and first-timers across India — three tracks, one grand finale, ₹50 lakh+ in prizes.</p>
+      <div class="timeline">
+        <div class="step"><strong>19 May 2026</strong><span>Registrations open and Track 1 submissions begin.</span></div>
+        <div class="step"><strong>29 May 2026</strong><span>Official introductory and orientation session for participants.</span></div>
+        <div class="step"><strong>2 July 2026</strong><span>Track 1 (Data &amp; AI) and Track 2 submissions close.</span></div>
+        <div class="step"><strong>22 July 2026</strong><span>Virtual Grand Finale — results and prize announcements.</span></div>
+      </div>
+      <div class="img-placeholder" style="margin-top:clamp(10px,1.5cqi,18px);height:clamp(40px,7cqi,70px)" role="img" aria-label="Optional: official India Runs event banner screenshot — save manually from hack2skill.com/event/india_runs">
+        Paste official event banner screenshot here (save from hack2skill.com/event/india_runs)
+      </div>
+      <div class="slide-footer">
+        <span>Source: <a href="https://hack2skill.com/event/india_runs/" class="footer-link" target="_blank" rel="noopener noreferrer">hack2skill.com/event/india_runs</a></span>
+        <span aria-label="Slide 4 of 5">4 / 5</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- SLIDE 5 — DELIVERABLES -->
+  <div class="slide-wrapper" id="slide-5">
+    <article class="slide" aria-label="Slide 5 of 5 — Final Deliverables">
+      <div class="glow-tr" aria-hidden="true"></div>
+      <div class="glow-bl" aria-hidden="true"></div>
+      <div class="brand">Final Deliverables</div>
+      <h2>Portfolio-ready assets for any reviewer or extension follow-up</h2>
+      <p class="subtitle">Everything a technical reviewer, recruiter, or judge needs is public and linked — no private files, no missing links.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h2>Public assets</h2>
+          <ul>
+            <li>GitHub repo with clean README and run instructions</li>
+            <li>This PDF deck committed to <code>docs/</code></li>
+            <li>Ranked <code>submission.xlsx</code> from final output</li>
+            <li>Colab sandbox for quick reviewer access</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Export this as PDF</h2>
+          <ul>
+            <li>Open in <strong>Chrome or Edge</strong></li>
+            <li>Press <strong>Ctrl + P</strong> (or ⌘P on Mac)</li>
+            <li>Choose <strong>Save as PDF</strong></li>
+            <li>Set paper to <strong>A4 Landscape</strong>, no margins</li>
+            <li>Save as <code>methodology_deck.pdf</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <a href="https://github.com/rangeshsha-Rookie/redrob-ranker" class="footer-link" target="_blank" rel="noopener noreferrer">github.com/rangeshsha-Rookie/redrob-ranker</a>
+        <span aria-label="Slide 5 of 5">5 / 5</span>
+      </div>
+    </article>
+  </div>
+
+</main>
+</body>
+</html>
